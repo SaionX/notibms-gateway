@@ -1,0 +1,30 @@
+server:
+  port: 9090
+
+eureka:
+  client:
+    register-with-eureka: false
+#    service-url:
+#      defaultZone: http://netflix:eureka@localhost:8761/eureka/
+
+spring:
+  application:
+    name: notib-gateway
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*" #"http://localhost:4200"
+            allowedMethods:
+              - GET
+              - POST
+              - DELETE
+              - PUT
+              - OPTIONS
+    routes:
+      - id: entitat-service
+        uri: lb://entitat-service
+        predicates:
+          - Path=/api/v1/entitat/**
+

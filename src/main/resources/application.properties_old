@@ -1,0 +1,19 @@
+spring.application.name=notib-gateway
+server.port=9090
+
+eureka.client.register-with-eureka=false
+
+#spring.cloud.gateway.globalcors.corsConfigurations.[/**].allowedOrigins="https://docs.spring.io"
+spring.cloud.gateway.globalcors.corsConfigurations.[/**].allowedOrigins="*"
+spring.cloud.gateway.globalcors.corsConfigurations.[/**].allowedMethods[0]=GET
+spring.cloud.gateway.globalcors.corsConfigurations.[/**].allowedMethods[1]=PUT
+
+#keycloak.realm=goib
+#keycloak.auth-server-url=http://127.0.0.1:18080/auth
+#keycloak.ssl-required=external
+#keycloak.resource=notib
+#keycloak.credentials.secret=dca1c31b-9697-4e73-a63d-57c1880c4000
+#keycloak.use-resource-role-mappings=false
+#keycloak.bearer-only=true
+
+# Routes
